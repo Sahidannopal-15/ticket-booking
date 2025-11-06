@@ -1,4 +1,3 @@
-import Seat from './components/Seat'  // perhatikan huruf besar
 
 function App() {
 
