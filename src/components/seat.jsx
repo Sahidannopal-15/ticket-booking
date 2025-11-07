@@ -4,9 +4,9 @@ import { useState } from 'react'
 //Warna kursi sesuai status
 const seatColors = {
   kosong : 'bg-white',
-  selected : 'bg-green-800',
-  reserved : 'bg-gray-800',
-  locked : 'bg-red-800'
+  selected : 'bg-purple-500',
+  reserved : 'bg-green-500',
+  locked : 'bg-red-500'
 }
 //algoritma
 const Seat = (props) => {
