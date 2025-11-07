@@ -6,6 +6,8 @@ const SeatLayout = ({kursiDipilih, kursiTerkunci, toggleKursi}) => {
 const dataKursi =[];
 const baris =['J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
 const jumlahBaris = 25; 
+const [kursiReserved, setKursiReserved] = useState([]);
+
 
 //buat perulangan kursi sampai 10 baris
 baris.forEach((huruf) => {
@@ -16,7 +18,8 @@ baris.forEach((huruf) => {
  // 🎯 fungsi kalo kursi diklik
 const handleSeatClick = (namaKursi) => {
     if (kursiTerkunci.includes(namaKursi)) return; 
-    if (kursiDipilih.includes(namaKursi)) {
+    if (kursiReserved.includes(namaKursi)) return;
+    else if (kursiDipilih.includes(namaKursi)) {
       setKursiDipilih(kursiDipilih.filter((k) => k !== namaKursi));
     } else {
       setKursiDipilih([...kursiDipilih, namaKursi]);
@@ -34,6 +37,7 @@ return(
   {dataKursi.map((kursi) => {
     let status = "kosong";
       if (kursiTerkunci.includes(kursi.id)) status = "locked";
+      else if(kursiReserved.includes(kursi.id)) status = "reserved";
       else if (kursiDipilih.includes(kursi.id)) status = "selected";
 
     return (
