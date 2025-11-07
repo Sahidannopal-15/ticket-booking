@@ -9,24 +9,14 @@ const seatColors = {
   locked : 'bg-red-500'
 }
 //algoritma
-const Seat = (props) => {
-//menyimpan status kursi
- const[seatStatus, setStatus] = useState(props.status)
-  const onSeatSelection = () =>{
-    props.onSeatClick()
-  }
-  if (seatStatus === 'kosong'){
-    setStatus('selected')
-  } else if (seatStatus === 'selected'){
-    setStatus('kosong')
-  }
-//Tampilan
-  return ( 
+const Seat = ({ id, status, onSeatClick }) => {
+  return (
     <div
-      onClick = {onSeatSelection}
-      className = {'w-8 h-8 border rounded cursor-pointer ${seatColors[seatStatus]} hover:scale-105'}
-      title = {`seat : ${seatStatus}`}
-    />
+      onClick={onSeatClick}
+      className={`w-8 h-8 border rounded cursor-pointer hover:scale-105 transition-transform ${seatColors[status]}`}
+      title={`seat: ${status}`}
+    >
+    </div>
   )
 }
 export default Seat

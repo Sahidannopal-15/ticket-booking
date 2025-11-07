@@ -1,5 +1,6 @@
 import Seat from "./Seat";
 import {useState} from 'react'; 
+import Summary from "./Summary";
 
 const SeatLayout = () => {
 const [kursiDipilih, setKursiDipilih] = useState([]);
