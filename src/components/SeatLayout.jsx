@@ -7,21 +7,21 @@ const [kursiDipilih, setKursiDipilih] = useState([]);
 const dataKursi =[];
 const baris =['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 const jumlahBaris = 20; 
+const kursiTerkunci = ["A1", "A2", "B3", "F5"];
 
 //buat perulangan kursi sampai 20 baris
 baris.forEach((huruf) => {
     for(let i = 1; i<=jumlahBaris; i++){
-        dataKursi.push({id : `${huruf} ${i}`, type : 'Seat'})
+        dataKursi.push({id : `${huruf}${i}`, type : 'Seat'})
     }
 });
  // 🎯 fungsi kalo kursi diklik
-const handleSeatClick = (id) => {
-    if (kursiDipilih.includes(id)) {
-      //jika di klik hapus dari list
-      setKursiDipilih(kursiDipilih.filter((kursi) => kursi !== id));
+const handleSeatClick = (namaKursi) => {
+    if (kursiTerkunci.includes(namaKursi)) return; 
+    if (kursiDipilih.includes(namaKursi)) {
+      setKursiDipilih(kursiDipilih.filter((k) => k !== namaKursi));
     } else {
-      // kalo belum, tambahkan ke list
-      setKursiDipilih([...kursiDipilih, id]);
+      setKursiDipilih([...kursiDipilih, namaKursi]);
     }
   };
 
@@ -33,15 +33,23 @@ return(
 
 {/*layout kursi*/}
 <div className="grid grid-cols-20 gap-2 justify-center">
-    {dataKursi.map((kursi) => (
-        <Seat key = {kursi.id}
-              id = {kursi.id}
-              status={kursiDipilih.includes(kursi.id) ? "selected" : "kosong"}
+    {dataKursi.map((kursi) => {
+        key = {kursi}
+        let status = "kosong";
+        if (kursiTerkunci.includes(kursi.id)) status = "locked";
+        else if (kursiDipilih.includes(kursi.id)) status = "selected";
+ return (
+            <Seat
+              key={kursi.id}
+              id={kursi.id}
+              status={status}
               onSeatClick={() => handleSeatClick(kursi.id)}
-              />
-     ))}
+            />
+          );
+        })}
 </div>
-{/*status kursi*/}
+
+{/*warna kursi*/}
 <div className="flex justify-center mt-6 gap-6">
   <div className="flex items-center gap-2">
     <div className="w-4 h-4 bg-purple-500 rounded"></div>
