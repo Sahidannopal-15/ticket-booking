@@ -13,6 +13,17 @@ baris.forEach((huruf) => {
         dataKursi.push({id : `${huruf} ${i}`, type : 'Seat'})
     }
 });
+ // 🎯 fungsi kalo kursi diklik
+const handleSeatClick = (id) => {
+    if (kursiDipilih.includes(id)) {
+      //jika di klik hapus dari list
+      setKursiDipilih(kursiDipilih.filter((kursi) => kursi !== id));
+    } else {
+      // kalo belum, tambahkan ke list
+      setKursiDipilih([...kursiDipilih, id]);
+    }
+  };
+
 return(
     <>
 <div className="text-center mb-4">
