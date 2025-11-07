@@ -65,6 +65,7 @@ return(
         <h2 className="font-semibold mb-2">Kursi yang dipilih:</h2>
         <p>{kursiDipilih.length > 0 ? kursiDipilih.join(", ") : "Belum ada kursi dipilih"}</p>
 </div>
+<Summary kursiDipilih={kursiDipilih} hargaKursi={50000} />
     </>
 )
 }
