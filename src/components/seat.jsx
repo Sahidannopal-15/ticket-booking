@@ -14,7 +14,7 @@ const Seat = ({ id, status, onSeatClick }) => {
     <button
       onClick={onSeatClick}
       disabled = {status === "locked"}
-      className={`w-8 h-8 border rounded cursor-pointer hover:scale-105 transition-transform ${seatColors[status]}`}
+      className={`w-8 h-8 flex items-center justify-center text-xs font-semibold border rounded transition-transform hover:scale-105 ${seatColors[status]}`}
     >
     {id}
     </button>

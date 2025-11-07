@@ -2,14 +2,12 @@ import Seat from "./Seat";
 import {useState} from 'react'; 
 import Summary from "./Summary";
 
-const SeatLayout = () => {
-const [kursiDipilih, setKursiDipilih] = useState([]);
+const SeatLayout = ({kursiDipilih, kursiTerkunci, toggleKursi}) => {
 const dataKursi =[];
-const baris =['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-const jumlahBaris = 20; 
-const kursiTerkunci = ["A1", "A2", "B3", "F5"];
+const baris =['J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
+const jumlahBaris = 25; 
 
-//buat perulangan kursi sampai 20 baris
+//buat perulangan kursi sampai 10 baris
 baris.forEach((huruf) => {
     for(let i = 1; i<=jumlahBaris; i++){
         dataKursi.push({id : `${huruf}${i}`, type : 'Seat'})
@@ -31,22 +29,22 @@ return(
      <h1 className="text-center font-bold">Screen</h1>
 </div>
 
-{/*layout kursi*/}
-<div className="grid grid-cols-20 gap-2 justify-center">
-    {dataKursi.map((kursi) => {
-        key = {kursi}
-        let status = "kosong";
-        if (kursiTerkunci.includes(kursi.id)) status = "locked";
-        else if (kursiDipilih.includes(kursi.id)) status = "selected";
- return (
-            <Seat
-              key={kursi.id}
-              id={kursi.id}
-              status={status}
-              onSeatClick={() => handleSeatClick(kursi.id)}
-            />
-          );
-        })}
+ {/* layout kursi */}
+<div className="grid grid-cols-25 gap-3 justify-center ml-5">
+  {dataKursi.map((kursi) => {
+    let status = "kosong";
+      if (kursiTerkunci.includes(kursi.id)) status = "locked";
+      else if (kursiDipilih.includes(kursi.id)) status = "selected";
+
+    return (
+      <Seat
+        key={kursi.id}
+        id={kursi.id}
+        status={status}
+        onSeatClick={() => toggleKursi(kursi.id)}
+      />
+    );
+  })}
 </div>
 
 {/*warna kursi*/}
