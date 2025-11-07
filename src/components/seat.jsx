@@ -11,12 +11,13 @@ const seatColors = {
 //algoritma
 const Seat = ({ id, status, onSeatClick }) => {
   return (
-    <div
+    <button
       onClick={onSeatClick}
+      disabled = {status === "locked"}
       className={`w-8 h-8 border rounded cursor-pointer hover:scale-105 transition-transform ${seatColors[status]}`}
-      title={`seat: ${status}`}
     >
-    </div>
+    {id}
+    </button>
   )
 }
 export default Seat
