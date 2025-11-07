@@ -2,6 +2,7 @@ import Seat from "./Seat";
 import {useState} from 'react'; 
 
 const SeatLayout = () => {
+const [kursiDipilih, setKursiDipilih] = useState([]);
 const dataKursi =[];
 const baris =['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 const jumlahBaris = 20; 
@@ -21,10 +22,14 @@ return(
 {/*layout kursi*/}
 <div className="grid grid-cols-20 gap-2 justify-center">
     {dataKursi.map((kursi) => (
-        <Seat key = {kursi.id} id = {kursi.id}/>
+        <Seat key = {kursi.id}
+              id = {kursi.id}
+              status={kursiDipilih.includes(kursi.id) ? "selected" : "kosong"}
+              onSeatClick={() => handleSeatClick(kursi.id)}
+              />
      ))}
 </div>
-
+{/*status kursi*/}
 <div className="flex justify-center mt-6 gap-6">
   <div className="flex items-center gap-2">
     <div className="w-4 h-4 bg-purple-500 rounded"></div>
@@ -42,6 +47,12 @@ return(
     <div className="w-4 h-4 bg-red-500 rounded"></div>
     <span>Dikunci</span>
   </div>
+</div>
+
+{/*ringkasan*/}
+ <div className="mt-6 text-center">
+        <h2 className="font-semibold mb-2">Kursi yang dipilih:</h2>
+        <p>{kursiDipilih.length > 0 ? kursiDipilih.join(", ") : "Belum ada kursi dipilih"}</p>
 </div>
     </>
 )
