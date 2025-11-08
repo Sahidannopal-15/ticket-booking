@@ -1,16 +1,48 @@
-# React + Vite
+🎟️ Ticket Booking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi pemesanan tiket sederhana berbasis React + Tailwind CSS yang dibuat untuk mensimulasikan sistem kasir bioskop.
 
-Currently, two official plugins are available:
+<hr>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Fitur Utama : 
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🎫 Pemilihan Kursi — memilih kursi secara interaktif.
 
-## Expanding the ESLint configuration
+🔒 Kursi Terkunci — beberapa kursi tidak bisa dipilih karena sudah dikunci.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Konfirmasi Pembelian — menampilkan notifikasi ketika pembelian berhasil.
+
+💾 Penyimpanan Kursi Dipesan — kursi yang sudah dibeli akan berubah statusnya.
+
+🖥️ Tampilan Kasir Bioskop (Desktop Friendly) — dibuat khusus untuk tampilan kasir, bukan untuk umum.
+
+<hr>
+
+🧩 Teknologi yang Digunakan :
+
+⚛️ React.js 
+
+💨 Tailwind CSS
+<hr>
+🎬 Tampilan :
+
+![Preview](./readme-img/kondisi-belum-pilih-kursi.png)
+![Preview](./readme-img/kondisi-beli-kursi.png)
+![Preview](./readme-img/Tampilan-full.png)
+
+<hr>
+
+🧠 Cara Kerja Singkat :
+
+💺Setiap kursi memiliki status: kosong, dipilih, sudah dipesan dan terkunci.
+
+🔒Kursi yang terkunci tidak bisa dipilih.
+
+💸Setelah memilih kursi, klik "Beli Sekarang" untuk melakukan pembelian.
+
+✅Kursi yang berhasil dibeli akan berubah warna menjadi hijau.
+
+<hr>
+
+Terimakasih sudah membaca 😁
