@@ -3,7 +3,7 @@ import SeatLayout from "./components/SeatLayout";
 import Summary from "./components/Summary";
 
 function App() {
-  const [kursiTerkunci, setKursiTerkunci] = useState(["J20", "J19","I20","I19"]);
+  const [kursiTerkunci, setKursiTerkunci] = useState(["J18","I18","J20", "J19","I20","I19","H18", "H19", "H20"]);
   const [kursiDipilih, setKursiDipilih] = useState([]);
   const [kursiReserved, setKursiReserved] = useState([]);
 
@@ -47,6 +47,10 @@ function App() {
       Beli Sekarang
       </button>
     </div>
+<footer className='mt-14 mx-4 border-t border-white/10 text-sm italic hover:text-red-500 
+        transition-colors duration-300 tracking-widest'>
+    💻 dibuat oleh sahidannopal15
+</footer>
   </div>
     </>
   );
