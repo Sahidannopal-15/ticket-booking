@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <>
+    <><div className="min-h-screen bg-cover bg-center bg-[url(./assets/coolbackgrounds-fractalize-bleach.png)]">
     <div className="">
       <SeatLayout
         kursiTerkunci={kursiTerkunci}
@@ -40,13 +40,14 @@ function App() {
         return;
       }
     }
-    className={`px-4 py-2 rounded font-semibold text-white ${
-      kursiDipilih.length === 0 ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"
+    className={`px-4 py-2 rounded-[10px] font-semibold text-white ${
+      kursiDipilih.length === 0 ? "bg-gray-400 cursor-not-allowed": "bg-blue-500 hover:bg-blue-800 cursor-pointer transition-all duration-500"
     }`}
       >
       Beli Sekarang
       </button>
     </div>
+  </div>
     </>
   );
 }

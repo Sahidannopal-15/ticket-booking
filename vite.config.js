@@ -7,4 +7,5 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
+   base: '/ticket-booking/', // ganti dengan nama repo lo di GitHub
 })

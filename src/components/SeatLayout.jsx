@@ -17,7 +17,7 @@ baris.forEach((huruf) => {
 return(
     <>
 <div className="text-center mb-4 ">
-     <h1 className="text-center text-white p-2 font-bold bg-green-700 w-full">Screen</h1>
+     <h1 className="text-center text-white p-2 font-bold bg-blue-500 w-full">Layar di sini</h1>
 </div>
 
  {/* layout kursi */}
@@ -59,11 +59,6 @@ return(
 </div>
 
 {/*ringkasan*/}
- <div className="mt-6 text-center">
-        <h2 className="font-semibold mb-2">Kursi yang dipilih:</h2>
-        <p>{kursiDipilih.length > 0 ? kursiDipilih.join(", ") : "Belum ada kursi dipilih"}</p>
-</div>
-
 <Summary kursiDipilih={kursiDipilih} hargaKursi={50000} />
     </>
 )
