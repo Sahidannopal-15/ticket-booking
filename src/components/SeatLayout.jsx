@@ -8,7 +8,7 @@ const dataKursi =[];
 const baris =['J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
 const jumlahBaris = 20; 
 
-//buat perulangan kursi sampai 10 baris
+//buat perulangan kursi sampai 20 baris
 baris.forEach((huruf) => {
     for(let i = 1; i<=jumlahBaris; i++){
         dataKursi.push({id : `${huruf}${i}`, type : 'Seat'})

@@ -4,6 +4,7 @@ import{useState} from 'react';
 const Summary = ({kursiDipilih, hargaKursi}) => {
 const totalHarga = kursiDipilih.length * hargaKursi;
 
+//ringkasan
 return(
     <div className="mt-8 text-center">
       <h2 className="text-xl font-bold mb-2">Ringkasan Pemesanan</h2>
